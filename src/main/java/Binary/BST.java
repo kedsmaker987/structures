@@ -44,6 +44,7 @@ public class BST<E extends Comparable<E>> {
     public Node add(Node node,E e){
         // 相等
         if(node == null){
+            size++;
             return new Node(e);
         }
 
@@ -145,6 +146,125 @@ public class BST<E extends Comparable<E>> {
         }
 
     }
+
+    // 二叉树最小值
+    public E minimum(){
+        if(size == 0){
+            throw new IllegalArgumentException(" BST is empty");
+        }
+
+        Node minNode = minimum(root);
+        return minNode.e;
+    }
+
+    private Node minimum(Node node){
+        if(node.left == null){
+            return node;
+        }
+        return minimum(node.left);
+    }
+
+    // 最大值
+    public E maximum(){
+        if(size == 0){
+            throw new IllegalArgumentException(" BST is empty");
+        }
+
+        Node maxNode = maximum(root);
+        return maxNode.e;
+    }
+
+    // 删除最小元素
+    public E removeMin(){
+        E ret = minimum();
+        root = removeMin(root);
+        return ret;
+    }
+
+    private Node removeMin(Node node){
+        if(node.left == null){
+            Node rightNode = node.right;
+            node.right = null;
+            size --;
+            return rightNode;
+        }
+
+        node.left = removeMin(node.left);
+        return node;
+    }
+
+    // 删除最大元素
+    public E removeMax(){
+        E ret = maximum();
+        root = removeMax(root);
+        return ret;
+    }
+
+    private Node removeMax(Node node){
+        if(node.right == null){
+            Node leftNode = node.left;
+            node.left = null;
+            size--;
+            return leftNode;
+        }
+        node.right = removeMax(node.right);
+        return node;
+    }
+
+
+    private Node maximum(Node node){
+        if(node.right == null){
+            return node;
+        }
+        return maximum(node.right);
+    }
+
+    // 从二分搜索树中删除元素为e的节点
+    public void remove(E e){
+        root = remove(root, e);
+    }
+
+    private Node remove(Node node,E e){
+        if(node == null){
+            return null;
+        }
+
+        if(e.compareTo(node.e)<0){
+            node.left = remove(node.left,e);
+            return node;
+        } else if(e.compareTo(node.e)>0){
+            node.right = remove(node.right,e);
+            return node;
+        }else {
+
+            // 左侧无
+            if(node.left == null){
+                Node rightNode = node.right;
+                node.right = null;
+                size--;
+                return rightNode;
+            }
+
+            if(node.right == null){
+                Node leftNode = node.left;
+                node.left = null;
+                size --;
+                return leftNode;
+            }
+
+            // 两侧都有,右侧最小值
+            Node lefMinNode = minimum(node.right);
+            // 删除右侧最小值
+            lefMinNode.right = removeMin(node.right);
+            lefMinNode.left = node.left;
+            node.left = null;
+            node.right = null;
+            return lefMinNode;
+        }
+
+    }
+
+
 
     @Override
     public String toString(){
