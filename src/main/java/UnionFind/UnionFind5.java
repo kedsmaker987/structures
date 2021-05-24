@@ -1,12 +1,12 @@
 package UnionFind;
 
-public class UnionFind4 implements UF {
+public class UnionFind5 implements UF {
 
     private int[] rank;   // rank[i]表示以i为根的集合所表示的树的层数
     private int[] parent; // parent[i]表示第i个元素所指向的父节点
 
     // 构造函数
-    public UnionFind4(int size){
+    public UnionFind5(int size){
 
         rank = new int[size];
         parent = new int[size];
@@ -30,9 +30,12 @@ public class UnionFind4 implements UF {
             throw new IllegalArgumentException("p is out of bound.");
 
         // 不断去查询自己的父亲节点, 直到到达根节点
-        // 根节点的特点: parent[p] == p
-        while(p != parent[p])
+        // 根节点的特点: parent[p] == p 压缩路径
+        while(p != parent[p]){
+            parent[p] = parent[parent[p]];
             p = parent[p];
+        }
+
         return p;
     }
 

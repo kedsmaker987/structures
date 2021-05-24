@@ -1,12 +1,15 @@
 package UnionFind;
 
-public class UnionFind4 implements UF {
+public class UnionFind6 implements UF {
 
-    private int[] rank;   // rank[i]表示以i为根的集合所表示的树的层数
+    // rank[i]表示以i为根的集合所表示的树的层数
+    // 在后续的代码中, 我们并不会维护rank的语意, 也就是rank的值在路径压缩的过程中, 有可能不在是树的层数值
+    // 这也是我们的rank不叫height或者depth的原因, 他只是作为比较的一个标准
+    private int[] rank;
     private int[] parent; // parent[i]表示第i个元素所指向的父节点
 
     // 构造函数
-    public UnionFind4(int size){
+    public UnionFind6(int size){
 
         rank = new int[size];
         parent = new int[size];
@@ -29,11 +32,10 @@ public class UnionFind4 implements UF {
         if(p < 0 || p >= parent.length)
             throw new IllegalArgumentException("p is out of bound.");
 
-        // 不断去查询自己的父亲节点, 直到到达根节点
-        // 根节点的特点: parent[p] == p
-        while(p != parent[p])
-            p = parent[p];
-        return p;
+        // path compression 2, 递归算法
+        if(p != parent[p])
+            parent[p] = find(parent[p]);
+        return parent[p];
     }
 
     // 查看元素p和元素q是否所属一个集合
@@ -56,9 +58,9 @@ public class UnionFind4 implements UF {
 
         // 根据两个元素所在树的rank不同判断合并方向
         // 将rank低的集合合并到rank高的集合上
-        if(rank[pRoot] < rank[qRoot])
+        if( rank[pRoot] < rank[qRoot] )
             parent[pRoot] = qRoot;
-        else if(rank[qRoot] < rank[pRoot])
+        else if( rank[qRoot] < rank[pRoot])
             parent[qRoot] = pRoot;
         else{ // rank[pRoot] == rank[qRoot]
             parent[pRoot] = qRoot;
