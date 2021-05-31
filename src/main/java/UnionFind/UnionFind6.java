@@ -1,5 +1,6 @@
 package UnionFind;
 
+/** The type Union find 6. */
 public class UnionFind6 implements UF {
 
     // rank[i]表示以i为根的集合所表示的树的层数
@@ -8,8 +9,13 @@ public class UnionFind6 implements UF {
     private int[] rank;
     private int[] parent; // parent[i]表示第i个元素所指向的父节点
 
-    // 构造函数
-    public UnionFind6(int size){
+  /**
+   * Instantiates a new Union find 6.
+   *
+   * @param size the size
+   */
+  // 构造函数
+  public UnionFind6(int size) {
 
         rank = new int[size];
         parent = new int[size];

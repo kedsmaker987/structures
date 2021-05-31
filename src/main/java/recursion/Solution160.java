@@ -5,7 +5,14 @@ package recursion;
  */
 public class Solution160 {
 
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    /**
+     * Gets intersection node.
+     *
+     * @param headA the head a
+     * @param headB the head b
+     * @return the intersection node
+     */
+public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
         // 判断两表的长度
         ListNode listA = headA;

@@ -5,7 +5,14 @@ package recursion;
  */
 public class Solution25 {
 
-    // 递归，反转
+    /**
+     * Reverse k group list node.
+     *
+     * @param head the head
+     * @param k the k
+     * @return the list node
+     */
+// 递归，反转
     public ListNode reverseKGroup(ListNode head, int k) {
 
         if(head == null){

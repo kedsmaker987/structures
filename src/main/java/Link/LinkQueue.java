@@ -1,10 +1,18 @@
 package Link;
 
+/**
+ * The type Link queue.
+ *
+ * @param <E>  the type parameter
+ */
 public class LinkQueue<E> implements Queue<E> {
 
     private ArrayLink<E> arrayLink;
 
-    public LinkQueue(){
+    /**
+     * Instantiates a new Link queue.
+     */
+public LinkQueue(){
         arrayLink = new ArrayLink<>();
     }
     @Override

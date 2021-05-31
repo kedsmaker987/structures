@@ -2,15 +2,22 @@ package UnionFind;
 
 import java.util.TreeSet;
 
+/** The type Solution. */
 public class solution {
 
-    public class UnionFind3  {
+  /** The type Union find 3. */
+  public class UnionFind3 {
 
         private int[] parent; // parent[i]表示第一个元素所指向的父节点
         private int[] sz;     // sz[i]表示以i为根的集合中元素个数
 
-        // 构造函数
-        public UnionFind3(int size){
+    /**
+     * Instantiates a new Union find 3.
+     *
+     * @param size the size
+     */
+    // 构造函数
+    public UnionFind3(int size) {
 
             parent = new int[size];
             sz = new int[size];
@@ -22,8 +29,12 @@ public class solution {
             }
         }
 
-
-        public int getSize(){
+    /**
+     * Get size int.
+     *
+     * @return the int
+     */
+    public int getSize() {
             return parent.length;
         }
 
@@ -40,17 +51,30 @@ public class solution {
             return p;
         }
 
-        // 查看元素p和元素q是否所属一个集合
-        // O(h)复杂度, h为树的高度
+    // 查看元素p和元素q是否所属一个集合
+    // O(h)复杂度, h为树的高度
 
-        public boolean isConnected( int p , int q ){
+    /**
+     * Is connected boolean.
+     *
+     * @param p the p
+     * @param q the q
+     * @return the boolean
+     */
+    public boolean isConnected(int p, int q) {
             return find(p) == find(q);
         }
 
-        // 合并元素p和元素q所属的集合
-        // O(h)复杂度, h为树的高度
+    // 合并元素p和元素q所属的集合
+    // O(h)复杂度, h为树的高度
 
-        public void unionElements(int p, int q){
+    /**
+     * Union elements.
+     *
+     * @param p the p
+     * @param q the q
+     */
+    public void unionElements(int p, int q) {
 
             int pRoot = find(p);
             int qRoot = find(q);
@@ -71,7 +95,13 @@ public class solution {
         }
     }
 
-    public int findCircleNum(int[][] isConnected) {
+  /**
+   * Find circle num int.
+   *
+   * @param isConnected the is connected
+   * @return the int
+   */
+  public int findCircleNum(int[][] isConnected) {
         int length = isConnected.length;
         UnionFind3 uf = new UnionFind3(length);
         for(int i=0;i<length;i++){

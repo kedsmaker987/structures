@@ -2,7 +2,7 @@ package segment;
 
 /**
  * 线段树
- * @param <E>
+ * @param <E>  the type parameter
  */
 public class Segment<E> {
     private E[] data;
@@ -10,7 +10,13 @@ public class Segment<E> {
     private Merger<E> merger;
 
 
-    public Segment(E[] arr,Merger<E> merger){
+    /**
+     * Instantiates a new Segment.
+     *
+     * @param arr the arr
+     * @param merger the merger
+     */
+public Segment(E[] arr,Merger<E> merger){
         data = (E[]) new Object[arr.length];
         for(int i=0;i<arr.length;i++){
             data[i] = arr[i];
@@ -43,11 +49,22 @@ public class Segment<E> {
         tree[treeIndex] = merger.merge(tree[leftIndex],tree[rightIndex]);
     }
 
-    public int getSize(){
+    /**
+     * Get size int.
+     *
+     * @return the int
+     */
+public int getSize(){
         return data.length;
     }
 
-    public E get(int index){
+    /**
+     * Get e.
+     *
+     * @param index the index
+     * @return the e
+     */
+public E get(int index){
         if(index < 0 || index >= data.length)
             throw new IllegalArgumentException("Index is illegal.");
         return data[index];
@@ -55,11 +72,11 @@ public class Segment<E> {
 
     /**
      * 查询区间 queryL-queryR的merger值
-     * @param queryL
-     * @param queryR
-     * @return
+     * @param queryL the query l
+     * @param queryR the query r
+     * @return e
      */
-    public E query(int queryL,int queryR){
+public E query(int queryL,int queryR){
         if(queryL < 0 || queryL >= data.length ||
                 queryR < 0 || queryR >= data.length || queryL > queryR)
             throw new IllegalArgumentException("Index is illegal.");
@@ -67,17 +84,16 @@ public class Segment<E> {
     }
 
     /**
+     * Query e.
      *
-     * @param treeIndex
-     * @param l
-     * @param r
-     * @param queryL
-     * @param queryR
-     * @return
-     *
-     * treeIndex为根线段树在[l,r]区间范围内,搜索[queryL,queryR] 的值
+     * @param treeIndex the tree index
+     * @param l the l
+     * @param r the r
+     * @param queryL the query l
+     * @param queryR the query r
+     * @return treeIndex为根线段树在[l, r]区间范围内, 搜索[queryL, queryR]  的值
      */
-    public E query(int treeIndex,int l,int r,int queryL,int queryR){
+public E query(int treeIndex,int l,int r,int queryL,int queryR){
         if(l == queryL && queryR == r){
             return tree[treeIndex];
         }
@@ -97,7 +113,13 @@ public class Segment<E> {
         return merger.merge(leftResult, rightResult);
     }
 
-    public void set(int index, E e){
+    /**
+     * Set.
+     *
+     * @param index the index
+     * @param e the e
+     */
+public void set(int index, E e){
         if(index<0 || index>=data.length){
             throw new IllegalArgumentException("index 参数不符合要求");
         }
@@ -106,16 +128,15 @@ public class Segment<E> {
     }
 
     /**
+     * Set.
      *
-     * @param treeIndex
-     * @param l
-     * @param r
-     * @param index
-     * @param e
-     *
-     * treeIndex根节点在 [l,r]区间更新index 为e
+     * @param treeIndex the tree index
+     * @param l the l
+     * @param r the r
+     * @param index the index
+     * @param e  treeIndex根节点在 [l,r]区间更新index 为e
      */
-    public void set(int treeIndex,int l,int r,int index,E e){
+public void set(int treeIndex,int l,int r,int index,E e){
         if(l == r){
             tree[treeIndex] = e;
             return;

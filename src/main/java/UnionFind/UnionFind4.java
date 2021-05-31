@@ -1,12 +1,18 @@
 package UnionFind;
 
+/** The type Union find 4. */
 public class UnionFind4 implements UF {
 
     private int[] rank;   // rank[i]表示以i为根的集合所表示的树的层数
     private int[] parent; // parent[i]表示第i个元素所指向的父节点
 
-    // 构造函数
-    public UnionFind4(int size){
+  /**
+   * Instantiates a new Union find 4.
+   *
+   * @param size the size
+   */
+  // 构造函数
+  public UnionFind4(int size) {
 
         rank = new int[size];
         parent = new int[size];

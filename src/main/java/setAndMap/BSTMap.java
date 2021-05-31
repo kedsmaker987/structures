@@ -2,13 +2,24 @@ package setAndMap;
 
 import java.util.ArrayList;
 
+/**
+ * The type Bst map.
+ *
+ * @param <K>  the type parameter
+ * @param <V>  the type parameter
+ */
 public class BSTMap<K extends Comparable<K>,V> implements Map<K,V> {
 
 
     private Node root;
     private int size;
 
-    public static void main(String[] args){
+    /**
+     * Main.
+     *
+     * @param args the args
+     */
+public static void main(String[] args){
 
         System.out.println("Pride and Prejudice");
 
@@ -186,11 +197,23 @@ public class BSTMap<K extends Comparable<K>,V> implements Map<K,V> {
     }
 
     private class Node{
-        public Node left,right;
+        /**
+         * The Left.
+         */
+public Node left,/**
+         * The Right.
+         */
+right;
         private K key;
         private V value;
 
-        public Node(K key,V value){
+        /**
+         * Instantiates a new Node.
+         *
+         * @param key the key
+         * @param value the value
+         */
+public Node(K key,V value){
             this.key = key;
             this.value = value;
             left = null;

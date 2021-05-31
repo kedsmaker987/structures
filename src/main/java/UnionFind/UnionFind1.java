@@ -1,10 +1,18 @@
 package UnionFind;
 
+/**
+ * The type Union find 1.
+ */
 public class UnionFind1 implements UF {
 
     private int[] id; // 数组
 
-    // 默认赋值
+    /**
+     * Instantiates a new Union find 1.
+     *
+     * @param size the size
+     */
+// 默认赋值
     public UnionFind1(int size){
         id = new int[size];
         for(int i=0;i<size;i++){

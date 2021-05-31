@@ -1,13 +1,26 @@
 package ArrayStack;
 
+/**
+ * The type Array stack.
+ *
+ * @param <E>  the type parameter
+ */
 public class ArrayStack<E> implements Stack<E> {
     private Array<E> array;
 
-    public ArrayStack(){
+    /**
+     * Instantiates a new Array stack.
+     */
+public ArrayStack(){
         array = new Array<E>();
     }
 
-    public ArrayStack(int capacity){
+    /**
+     * Instantiates a new Array stack.
+     *
+     * @param capacity the capacity
+     */
+public ArrayStack(int capacity){
         array = new Array<E>(capacity);
     }
 

@@ -1,11 +1,17 @@
 package UnionFind;
 
+/** The type Union find 2. */
 public class UnionFind2 implements UF {
 
     private int[] parent; // 记录每一个元素对应的父坐标，和元素实际值没有关系
 
-    // 默认赋值
-    public UnionFind2(int size){
+  /**
+   * Instantiates a new Union find 2.
+   *
+   * @param size the size
+   */
+  // 默认赋值
+  public UnionFind2(int size) {
        parent = new int[size];
        for(int i=0;i<size;i++){
            parent[i] = i;

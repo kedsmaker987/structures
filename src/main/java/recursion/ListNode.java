@@ -1,13 +1,41 @@
 package recursion;
 
+/**
+ * The type List node.
+ */
 public  class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    /**
+     * The Val.
+     */
+int val;
+    /**
+     * The Next.
+     */
+ListNode next;
+    /**
+     * Instantiates a new List node.
+     */
+ListNode() {}
+    /**
+     * Instantiates a new List node.
+     *
+     * @param val the val
+     */
+ListNode(int val) { this.val = val; }
+    /**
+     * Instantiates a new List node.
+     *
+     * @param val the val
+     * @param next the next
+     */
+ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
-    public ListNode(int[] arr){
+    /**
+     * Instantiates a new List node.
+     *
+     * @param arr the arr
+     */
+public ListNode(int[] arr){
         this.val = arr[0];
         ListNode cur = this;
         for(int i=1;i<arr.length;i++){

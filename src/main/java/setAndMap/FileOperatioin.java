@@ -7,9 +7,19 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
+/**
+ * The type File operatioin.
+ */
 public class FileOperatioin {
 
-    public static boolean readFile(String fileName, ArrayList<String> words){
+    /**
+     * Read file boolean.
+     *
+     * @param fileName the file name
+     * @param words the words
+     * @return the boolean
+     */
+public static boolean readFile(String fileName, ArrayList<String> words){
         if(fileName == null || words == null){
             System.out.println("fileName or words is empty");
             return false;

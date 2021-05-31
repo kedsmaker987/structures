@@ -1,9 +1,28 @@
 package UnionFind;
 
+/** The interface Uf. */
 public interface UF {
-    int getSize();
+  /**
+   * Gets size.
+   *
+   * @return the size
+   */
+  int getSize();
 
-    boolean isConnected(int p,int q);
+  /**
+   * Is connected boolean.
+   *
+   * @param p the p
+   * @param q the q
+   * @return the boolean
+   */
+  boolean isConnected(int p, int q);
 
-    void unionElements(int p,int q);
+  /**
+   * Union elements.
+   *
+   * @param p the p
+   * @param q the q
+   */
+  void unionElements(int p, int q);
 }

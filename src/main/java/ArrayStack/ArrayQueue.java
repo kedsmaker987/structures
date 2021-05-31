@@ -1,14 +1,27 @@
 package ArrayStack;
 
+/**
+ * The type Array queue.
+ *
+ * @param <E>  the type parameter
+ */
 public class ArrayQueue<E> implements Quque<E> {
 
     private Array<E> array;
 
-    public ArrayQueue(int capacity){
+    /**
+     * Instantiates a new Array queue.
+     *
+     * @param capacity the capacity
+     */
+public ArrayQueue(int capacity){
         array = new Array(capacity);
     }
 
-    public ArrayQueue(){
+    /**
+     * Instantiates a new Array queue.
+     */
+public ArrayQueue(){
         array = new Array();
     }
 
@@ -51,7 +64,12 @@ public class ArrayQueue<E> implements Quque<E> {
         return res.toString();
     }
 
-    public static void main(String[] args) {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
+public static void main(String[] args) {
 
         ArrayQueue<Integer> queue = new ArrayQueue<Integer>();
         for(int i = 0 ; i < 10 ; i ++){

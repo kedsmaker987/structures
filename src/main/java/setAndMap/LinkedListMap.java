@@ -2,17 +2,31 @@ package setAndMap;
 
 import java.util.ArrayList;
 
+/**
+ * The type Linked list map.
+ *
+ * @param <K>  the type parameter
+ * @param <V>  the type parameter
+ */
 public class LinkedListMap<K,V> implements Map<K,V> {
 
 
     private Node dummyHead;
     private int size;
-    public LinkedListMap(){
+    /**
+     * Instantiates a new Linked list map.
+     */
+public LinkedListMap(){
         dummyHead = new Node();
         size = 0;
     }
 
-    public static void main(String[] args){
+    /**
+     * Main.
+     *
+     * @param args the args
+     */
+public static void main(String[] args){
 
         System.out.println("Pride and Prejudice");
 
@@ -111,22 +125,47 @@ public class LinkedListMap<K,V> implements Map<K,V> {
     }
 
     private class Node{
-        public K key;
-        public V value;
+        /**
+         * The Key.
+         */
+public K key;
+        /**
+         * The Value.
+         */
+public V value;
 
-        public Node next;
+        /**
+         * The Next.
+         */
+public Node next;
 
-        public Node(K key,V value,Node next){
+        /**
+         * Instantiates a new Node.
+         *
+         * @param key the key
+         * @param value the value
+         * @param next the next
+         */
+public Node(K key,V value,Node next){
             this.key = key;
             this.value =value;
             this.next = next;
         }
 
-        public Node(K key,V value){
+        /**
+         * Instantiates a new Node.
+         *
+         * @param key the key
+         * @param value the value
+         */
+public Node(K key,V value){
             this(key,value,null);
         }
 
-        public Node(){
+        /**
+         * Instantiates a new Node.
+         */
+public Node(){
             this(null,null,null);
         }
 

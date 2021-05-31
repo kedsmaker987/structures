@@ -1,10 +1,18 @@
 package Link;
 
+/**
+ * The type Link stack.
+ *
+ * @param <E>  the type parameter
+ */
 public class LinkStack<E> implements Stack<E> {
 
     private ArrayLink<E> arrayLink;
 
-    public LinkStack(){
+    /**
+     * Instantiates a new Link stack.
+     */
+public LinkStack(){
         arrayLink = new ArrayLink<>();
     }
 

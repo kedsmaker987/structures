@@ -1,18 +1,36 @@
 package ArrayStack;
 
+/**
+ * The type Loop queue.
+ *
+ * @param <E>  the type parameter
+ */
 public class LoopQueue<E> implements Quque<E> {
 
     private E[] data;
     private int size;
-    private int head;int tail;
+    private int head;/**
+     * The Tail.
+     */
+int tail;
 
-    public LoopQueue(int capacity){
+    /**
+     * Instantiates a new Loop queue.
+     *
+     * @param capacity the capacity
+     */
+public LoopQueue(int capacity){
         data = (E[]) new Object[capacity+1];
         head = tail = 0;
         size= 0;
     }
 
-    public int getCapacity(){
+    /**
+     * Get capacity int.
+     *
+     * @return the int
+     */
+public int getCapacity(){
         return data.length -1;
     }
 
@@ -93,7 +111,12 @@ public class LoopQueue<E> implements Quque<E> {
         return res.toString();
     }
 
-    public static void main(String[] args){
+    /**
+     * Main.
+     *
+     * @param args the args
+     */
+public static void main(String[] args){
 
         LoopQueue<Integer> queue = new LoopQueue<Integer>(5);
         for(int i = 0 ; i < 10 ; i ++){

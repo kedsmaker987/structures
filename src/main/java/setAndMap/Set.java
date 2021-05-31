@@ -2,18 +2,44 @@ package setAndMap;
 
 /**
  * 集合
- * @param <E>
+ * @param <E>  the type parameter
  */
 public interface Set<E> {
 
-    void add(E e);
+    /**
+     * Add.
+     *
+     * @param e the e
+     */
+void add(E e);
 
-    boolean contains(E e);
+    /**
+     * Contains boolean.
+     *
+     * @param e the e
+     * @return the boolean
+     */
+boolean contains(E e);
 
-    void remove(E e);
+    /**
+     * Remove.
+     *
+     * @param e the e
+     */
+void remove(E e);
 
-    int getSize();
+    /**
+     * Gets size.
+     *
+     * @return the size
+     */
+int getSize();
 
-    boolean isEmpty();
+    /**
+     * Is empty boolean.
+     *
+     * @return the boolean
+     */
+boolean isEmpty();
 
 }

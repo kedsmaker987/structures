@@ -6,7 +6,14 @@ package recursion;
 public class Solution203_recursion {
 
 
-  // 删除链表所有val值
+  /**
+   * Remove elements list node.
+   *
+   * @param head the head
+   * @param val the val
+   * @return the list node
+   */
+// 删除链表所有val值
   public static ListNode removeElements(ListNode head, int val){
 
         if(head == null){

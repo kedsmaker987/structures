@@ -1,18 +1,48 @@
 package ArrayStack;
 
+/**
+ * The interface Quque.
+ *
+ * @param <E>  the type parameter
+ */
 public interface Quque<E> {
-    // 入队
+    /**
+     * Enqueue.
+     *
+     * @param e the e
+     */
+// 入队
     public void enqueue(E e);
 
-    // 出队
+    /**
+     * Dequeue e.
+     *
+     * @return the e
+     */
+// 出队
     public E dequeue();
 
-    // 第一个
+    /**
+     * Gets front.
+     *
+     * @return the front
+     */
+// 第一个
     E getFront();
 
-    // 队大小
+    /**
+     * Gets size.
+     *
+     * @return the size
+     */
+// 队大小
     int getSize();
 
-    // 是否为null
+    /**
+     * Is empty boolean.
+     *
+     * @return the boolean
+     */
+// 是否为null
     boolean isEmpty();
 }

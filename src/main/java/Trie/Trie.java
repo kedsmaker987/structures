@@ -9,15 +9,29 @@ public class Trie {
 
     private class Node{
 
-        public boolean isWord;
-        public TreeMap<Character,Node> next;
+        /**
+         * The Is word.
+         */
+public boolean isWord;
+        /**
+         * The Next.
+         */
+public TreeMap<Character,Node> next;
 
-        public Node(boolean isWord){
+        /**
+         * Instantiates a new Node.
+         *
+         * @param isWord the is word
+         */
+public Node(boolean isWord){
             this.isWord = isWord;
             next = new TreeMap<>();
         }
 
-        public Node(){
+        /**
+         * Instantiates a new Node.
+         */
+public Node(){
             this(false);
         }
     }
@@ -25,16 +39,29 @@ public class Trie {
     private Node root;
     private int size;
 
-    public Trie(){
+    /**
+     * Instantiates a new Trie.
+     */
+public Trie(){
         root = new Node();
         size = 0;
     }
 
-    public int getSize(){
+    /**
+     * Get size int.
+     *
+     * @return the int
+     */
+public int getSize(){
         return size;
     }
 
-    // 新加单词
+    /**
+     * Add.
+     *
+     * @param word the word
+     */
+// 新加单词
     public void add(String word){
         Node cur = root;
         for(int i=0;i<word.length();i++){
@@ -52,7 +79,13 @@ public class Trie {
     }
 
 
-    public boolean contains(String word){
+    /**
+     * Contains boolean.
+     *
+     * @param word the word
+     * @return the boolean
+     */
+public boolean contains(String word){
         Node cur = root;
         for(int i=0;i<word.length();i++){
             char c = word.charAt(i);

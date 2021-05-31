@@ -1,11 +1,19 @@
 package UnionFind;
 
+/**
+ * The type Union find 3.
+ */
 public class UnionFind3 implements UF {
 
     private int[] parent; // parent[i]表示第一个元素所指向的父节点
     private int[] sz;     // sz[i]表示以i为根的集合中元素个数
 
-    // 构造函数
+    /**
+     * Instantiates a new Union find 3.
+     *
+     * @param size the size
+     */
+// 构造函数
     public UnionFind3(int size){
 
         parent = new int[size];

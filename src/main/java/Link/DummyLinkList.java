@@ -1,25 +1,52 @@
 package Link;
 
+/**
+ * The type Dummy link list.
+ *
+ * @param <E>  the type parameter
+ */
 public class DummyLinkList<E> {
 
-    public class Node {
+    /**
+     * The type Node.
+     */
+public class Node {
         private E e;
         private Node next;
 
-        public Node(E e, Node next) {
+        /**
+         * Instantiates a new Node.
+         *
+         * @param e the e
+         * @param next the next
+         */
+public Node(E e, Node next) {
             this.e = e;
             this.next = next;
         }
 
-        public Node(E e) {
+        /**
+         * Instantiates a new Node.
+         *
+         * @param e the e
+         */
+public Node(E e) {
             this(e, null);
         }
 
-        public Node(Node node) {
+        /**
+         * Instantiates a new Node.
+         *
+         * @param node the node
+         */
+public Node(Node node) {
             this(null, node);
         }
 
-        public Node() {
+        /**
+         * Instantiates a new Node.
+         */
+public Node() {
             this(null, null);
         }
 
@@ -32,12 +59,21 @@ public class DummyLinkList<E> {
     private Node dummyHead;
     private int size;
 
-    public DummyLinkList() {
+    /**
+     * Instantiates a new Dummy link list.
+     */
+public DummyLinkList() {
         dummyHead = new Node();
         size = 0;
     }
 
-    public void add(int index, E e) {
+    /**
+     * Add.
+     *
+     * @param index the index
+     * @param e the e
+     */
+public void add(int index, E e) {
         if (index < 0 || index > size)
             throw new IllegalArgumentException("Add failed. Illegal index.");
         Node pre = dummyHead;
@@ -49,20 +85,41 @@ public class DummyLinkList<E> {
         size++;
     }
 
-    public void addFirst(E e) {
+    /**
+     * Add first.
+     *
+     * @param e the e
+     */
+public void addFirst(E e) {
         add(0, e);
     }
 
-    public void addLast(E e) {
+    /**
+     * Add last.
+     *
+     * @param e the e
+     */
+public void addLast(E e) {
         add(size, e);
     }
 
-    public boolean isEmpty() {
+    /**
+     * Is empty boolean.
+     *
+     * @return the boolean
+     */
+public boolean isEmpty() {
         return size == 0;
     }
 
 
-    public E get(int index) {
+    /**
+     * Get e.
+     *
+     * @param index the index
+     * @return the e
+     */
+public E get(int index) {
         Node cur = dummyHead.next;
         for (int i = 0; i < index; i++) {
             cur = cur.next;
@@ -70,15 +127,31 @@ public class DummyLinkList<E> {
         return cur.e;
     }
 
-    public E getFirst() {
+    /**
+     * Gets first.
+     *
+     * @return the first
+     */
+public E getFirst() {
         return get(0);
     }
 
-    public E getLast() {
+    /**
+     * Gets last.
+     *
+     * @return the last
+     */
+public E getLast() {
         return get(size - 1);
     }
 
-    public boolean contains(E e) {
+    /**
+     * Contains boolean.
+     *
+     * @param e the e
+     * @return the boolean
+     */
+public boolean contains(E e) {
         Node cur = dummyHead.next;
         for (int i = 0; i < size; i++) {
             if (cur.e.equals(e)) {
@@ -89,7 +162,13 @@ public class DummyLinkList<E> {
         return false;
     }
 
-    public E remove(int index){
+    /**
+     * Remove e.
+     *
+     * @param index the index
+     * @return the e
+     */
+public E remove(int index){
         if(index<0 || index>=size){
             throw new IllegalArgumentException("index out band");
         }
@@ -104,15 +183,30 @@ public class DummyLinkList<E> {
     }
 
 
-    public E removeFirst(){
+    /**
+     * Remove first e.
+     *
+     * @return the e
+     */
+public E removeFirst(){
         return remove(0);
     }
 
-    public E removeLast(){
+    /**
+     * Remove last e.
+     *
+     * @return the e
+     */
+public E removeLast(){
         return remove(size -1);
     }
 
-    public void removeElement(E e){
+    /**
+     * Remove element.
+     *
+     * @param e the e
+     */
+public void removeElement(E e){
        Node pre = dummyHead;
        while (pre.next !=null){
             if(pre.e.equals(e)){
@@ -127,7 +221,13 @@ public class DummyLinkList<E> {
     }
 
 
-    public void set(int index ,E e){
+    /**
+     * Set.
+     *
+     * @param index the index
+     * @param e the e
+     */
+public void set(int index ,E e){
         if(index<0 || index>size){
             throw new IllegalArgumentException("index out band");
         }

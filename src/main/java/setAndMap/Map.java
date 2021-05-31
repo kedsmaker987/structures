@@ -1,18 +1,64 @@
 package setAndMap;
 
+/**
+ * The interface Map.
+ *
+ * @param <K>  the type parameter
+ * @param <V>  the type parameter
+ */
 public interface Map<K,V> {
 
-    void add(K key,V value);
+    /**
+     * Add.
+     *
+     * @param key the key
+     * @param value the value
+     */
+void add(K key,V value);
 
-    V remove(K key);
+    /**
+     * Remove v.
+     *
+     * @param key the key
+     * @return the v
+     */
+V remove(K key);
 
-    boolean contains(K key);
+    /**
+     * Contains boolean.
+     *
+     * @param key the key
+     * @return the boolean
+     */
+boolean contains(K key);
 
-    V get(K key);
+    /**
+     * Get v.
+     *
+     * @param key the key
+     * @return the v
+     */
+V get(K key);
 
-    void set(K key,V newValue);
+    /**
+     * Set.
+     *
+     * @param key the key
+     * @param newValue the new value
+     */
+void set(K key,V newValue);
 
-    int getSize();
+    /**
+     * Gets size.
+     *
+     * @return the size
+     */
+int getSize();
 
-    boolean isEmpty();
+    /**
+     * Is empty boolean.
+     *
+     * @return the boolean
+     */
+boolean isEmpty();
 }

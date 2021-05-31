@@ -1,25 +1,52 @@
 package Link;
 
+/**
+ * The type Link list.
+ *
+ * @param <E>  the type parameter
+ */
 public class LinkList<E> {
 
-    public class Node{
+    /**
+     * The type Node.
+     */
+public class Node{
         private E e;
         private Node next;
 
-        public Node(E e,Node next){
+        /**
+         * Instantiates a new Node.
+         *
+         * @param e the e
+         * @param next the next
+         */
+public Node(E e,Node next){
             this.e = e;
             this.next = next;
         }
 
-        public Node(E e){
+        /**
+         * Instantiates a new Node.
+         *
+         * @param e the e
+         */
+public Node(E e){
            this(e,null);
         }
 
-        public Node(Node node){
+        /**
+         * Instantiates a new Node.
+         *
+         * @param node the node
+         */
+public Node(Node node){
             this(null,node);
         }
 
-        public Node(){
+        /**
+         * Instantiates a new Node.
+         */
+public Node(){
             this(null,null);
         }
 
@@ -32,12 +59,20 @@ public class LinkList<E> {
     private Node head;
     private int size;
 
-    public LinkList(){
+    /**
+     * Instantiates a new Link list.
+     */
+public LinkList(){
         head = null;
         size = 0;
     }
 
-    // 头部增加元素
+    /**
+     * Add first.
+     *
+     * @param e the e
+     */
+// 头部增加元素
     public void addFirst(E e){
         if(this.head == null){
             this.head = new Node(e,null);
@@ -48,7 +83,13 @@ public class LinkList<E> {
         size ++;
     }
 
-    // 指定位置添加元素
+    /**
+     * Add.
+     *
+     * @param e the e
+     * @param index the index
+     */
+// 指定位置添加元素
     public void add(E e,int index){
         if(index<0 || index>size){
             throw new IllegalArgumentException("index out bound");
@@ -83,7 +124,12 @@ public class LinkList<E> {
     }
 
 
-    public static void main(String[] args){
+    /**
+     * Main.
+     *
+     * @param args the args
+     */
+public static void main(String[] args){
         LinkList linkList = new LinkList();
         linkList.addFirst(10);
         linkList.addFirst(2);

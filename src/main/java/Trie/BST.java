@@ -6,14 +6,31 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * 二叉树
- * @param <E>
+ * @param <E>  the type parameter
  */
 public class BST<E extends Comparable<E>> {
 
-    public class Node{
-        public E e;
-        public Node left,right;
-        public Node(E e){
+    /**
+     * The type Node.
+     */
+public class Node{
+        /**
+         * The E.
+         */
+public E e;
+        /**
+         * The Left.
+         */
+public Node left,/**
+         * The Right.
+         */
+right;
+        /**
+         * Instantiates a new Node.
+         *
+         * @param e the e
+         */
+public Node(E e){
             this.e = e;
             left = null;
             right = null;
@@ -23,32 +40,45 @@ public class BST<E extends Comparable<E>> {
     private Node root;
     private int size;
 
-    public int getSize(){
+    /**
+     * Get size int.
+     *
+     * @return the int
+     */
+public int getSize(){
         return size;
     }
 
-    public boolean isEmpty(){
+    /**
+     * Is empty boolean.
+     *
+     * @return the boolean
+     */
+public boolean isEmpty(){
         return size == 0;
     }
 
     /**
      * 添加
-     * @param e
+     * @param e the e
      */
-    public void add(E e){
+public void add(E e){
         root = add(root,e);
     }
 
     /**
      * 是否包含
-     * @param e
-     * @return
+     * @param e the e
+     * @return boolean
      */
-    public boolean contains(E e){
+public boolean contains(E e){
         return contains(root,e);
     }
 
-    public void levelOrder(){
+    /**
+     * Level order.
+     */
+public void levelOrder(){
         Queue<Node> q = new LinkedList<>();
         q.add(root);
         while (!q.isEmpty()){
@@ -68,23 +98,33 @@ public class BST<E extends Comparable<E>> {
 
     /**
      * 最小值
-     * @return
+     * @return e
      */
-    public E minimum(){
+public E minimum(){
         if(size == 0){
             throw new IllegalArgumentException("容器为null");
         }
         return minimum(root).e;
     }
 
-    public E removeMin(){
+    /**
+     * Remove min e.
+     *
+     * @return the e
+     */
+public E removeMin(){
         E ret = minimum();
         removeMin(root);
         return ret;
     }
 
 
-    public void remove(E e){
+    /**
+     * Remove.
+     *
+     * @param e the e
+     */
+public void remove(E e){
         remove(root,e);
     }
 
@@ -152,7 +192,14 @@ public class BST<E extends Comparable<E>> {
         return minimum(node.left);
     }
 
-    public boolean contains(Node node,E e){
+    /**
+     * Contains boolean.
+     *
+     * @param node the node
+     * @param e the e
+     * @return the boolean
+     */
+public boolean contains(Node node,E e){
         if(node == null){
             return false;
         }
@@ -169,11 +216,11 @@ public class BST<E extends Comparable<E>> {
 
     /**
      * 不支持添加相同元素
-     * @param node
-     * @param e
-     * @return
+     * @param node the node
+     * @param e the e
+     * @return node
      */
-    public Node add(Node node,E e){
+public Node add(Node node,E e){
         if(node == null){
             size++;
             return new Node(e);

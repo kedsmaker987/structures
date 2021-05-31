@@ -1,16 +1,40 @@
 package ArrayStack;
 
+/**
+ * The interface Stack.
+ *
+ * @param <E>  the type parameter
+ */
 public interface Stack<E> {
 
-    /**数据量**/
-    int getSize();
+    /**数据量 @return the size*/
+int getSize();
 
-    /****/
-    boolean isEmpty();
+    /**
+     * Is empty boolean.
+     *
+     * @return the boolean
+     */
+boolean isEmpty();
 
-    void push(E e);
+    /**
+     * Push.
+     *
+     * @param e the e
+     */
+void push(E e);
 
-    E pop();
+    /**
+     * Pop e.
+     *
+     * @return the e
+     */
+E pop();
 
-    E peek();
+    /**
+     * Peek e.
+     *
+     * @return the e
+     */
+E peek();
 }

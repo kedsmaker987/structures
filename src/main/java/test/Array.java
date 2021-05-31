@@ -1,32 +1,61 @@
 package test;
 
 
+/**
+ * The type Array.
+ *
+ * @param <T>  the type parameter
+ */
 public class Array<T> {
 
     private T[] data;
 
     private int size;
 
-    public Array(int capacity){
+    /**
+     * Instantiates a new Array.
+     *
+     * @param capacity the capacity
+     */
+public Array(int capacity){
         data = (T[]) new Object[capacity];
         this.size = 0;
     }
 
-    public Array(){
+    /**
+     * Instantiates a new Array.
+     */
+public Array(){
         this(10);
     }
 
-    // 数组长度
+    /**
+     * Get size int.
+     *
+     * @return the int
+     */
+// 数组长度
     public int getSize(){
         return size;
     }
 
-    // 数组容量
+    /**
+     * Get capacity int.
+     *
+     * @return the int
+     */
+// 数组容量
     public int getCapacity(){
         return data.length;
     }
 
-    // 添加标准元素
+    /**
+     * Add.
+     *
+     * @param index the index
+     * @param t the t
+     */
+// 添加标准元素
     public void add(int index,T t){
         if(index>size || index<0){
             throw new IllegalArgumentException("Add fail, Request index >=0 and index <= size. ");
@@ -43,17 +72,33 @@ public class Array<T> {
         }
     }
 
-    // 添加队头
+    /**
+     * Add first.
+     *
+     * @param t the t
+     */
+// 添加队头
     public void addFirst(T t){
         add(0,t);
     }
 
-    // 添加到队尾
+    /**
+     * Add last.
+     *
+     * @param t the t
+     */
+// 添加到队尾
     public void addLast(T t){
         add(size,t);
     }
 
-    // 是否包含元素
+    /**
+     * Contains boolean.
+     *
+     * @param t the t
+     * @return the boolean
+     */
+// 是否包含元素
     public boolean contains(T t){
         for(int i=0;i<size;i++){
             if(data[i].equals(t)){
@@ -63,7 +108,13 @@ public class Array<T> {
         return false;
     }
 
-    // 删除元素
+    /**
+     * Remove t.
+     *
+     * @param index the index
+     * @return the t
+     */
+// 删除元素
     public T remove(int index){
         if(index<0 || index>=size){
             throw new IllegalArgumentException("Remove fail, method doesn't support index out range ");
@@ -81,15 +132,31 @@ public class Array<T> {
         return t;
     }
 
-    public T removeFirst(){
+    /**
+     * Remove first t.
+     *
+     * @return the t
+     */
+public T removeFirst(){
         return remove(0);
     }
 
-    public T removeLast(){
+    /**
+     * Remove last t.
+     *
+     * @return the t
+     */
+public T removeLast(){
         return remove(size-1);
     }
 
-    // 查找元素
+    /**
+     * Find int.
+     *
+     * @param t the t
+     * @return the int
+     */
+// 查找元素
     public int find(T t){
         for(int i=0;i<size;i++){
             if(data[i].equals(t)){
@@ -99,14 +166,24 @@ public class Array<T> {
         return -1;
     }
 
-    public void removeElement(T t){
+    /**
+     * Remove element.
+     *
+     * @param t the t
+     */
+public void removeElement(T t){
         int index = find(t);
         if(index!=-1){
             remove(index);
         }
     }
 
-    // 扩容
+    /**
+     * Resize.
+     *
+     * @param newCapacity the new capacity
+     */
+// 扩容
     public void resize(int newCapacity){
         T[] newData = (T[]) new Object[newCapacity];
         for(int i=0;i<size;i++){

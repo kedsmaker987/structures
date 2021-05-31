@@ -2,6 +2,7 @@ package UnionFind;
 
 import java.util.Random;
 
+/** The type Main. */
 public class Main {
     private static double testUF(UF uf, int m){
 
@@ -28,7 +29,12 @@ public class Main {
         return (endTime - startTime) / 1000000000.0;
     }
 
-    public static void main(String[] args) {
+  /**
+   * The entry point of application.
+   *
+   * @param args the input arguments
+   */
+  public static void main(String[] args) {
 
         // UnionFind1 慢于 UnionFind2
 //        int size = 100000;

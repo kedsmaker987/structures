@@ -1,10 +1,18 @@
 package setAndMap;
 
+/**
+ * The type Bst set.
+ *
+ * @param <E>  the type parameter
+ */
 public class BSTSet<E extends Comparable<E>> implements Set<E> {
 
     private BST<E> bst;
 
-    public BSTSet(){
+    /**
+     * Instantiates a new Bst set.
+     */
+public BSTSet(){
         bst = new BST<>();
     }
 
