@@ -349,10 +349,6 @@ public class AVLTree<K extends Comparable<K>, V> {
         map.remove(word);
       }
     }
-
     System.out.println();
   }
-
-
-
 }
